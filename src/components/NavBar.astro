@@ -1,41 +1,130 @@
-
 ---
-import Title from '../components/Title.astro'
 import Description from '../components/Description.astro'
 import Button from '../components/Button.astro'
-import { Astronav, MenuItems, MenuIcon, Dropdown, DropdownItems, DropdownSubmenu } from "astro-navbar";
+import {
+  Astronav,
+  MenuItems,
+  Dropdown,
+  DropdownItems,
+} from 'astro-navbar'
 import { ArrowRight, ChevronDown } from 'lucide-astro'
 ---
 
 <nav
   id="nav-bar"
-  class="fixed flex justify-between w-full items-center pt-6 px-6 z-10 top-0 left-0" 
->
-  <div class="font-bold text-lg">
-    zen browser
-  </div>
+  class="fixed left-0 top-0 z-10 flex w-full items-center justify-between px-6 pt-6">
+  <div class="text-lg font-bold">zen browser</div>
   <Astronav>
-    <MenuItems class="rounded-full border-dark border-2 p-2 pl-4 backdrop-blur-xl bg-paper/30 hidden lg:flex">
-      <ul class="gap-6 lg:flex items-center">
+    <MenuItems
+      class="hidden rounded-full border-2 border-dark bg-paper/30 p-2 pl-4 backdrop-blur-xl lg:flex">
+      <ul class="items-center gap-6 lg:flex">
         <Dropdown class="group">
           <button class="flex items-center">
             <span>Getting Started</span>
-            <ChevronDown class="group-open:rotate-180 transform transition-transform duration-200" />
+            <ChevronDown
+              class="transform transition-transform duration-200 group-open:rotate-180"
+            />
           </button>
-          <DropdownItems>
-            <div class="absolute top-0">
-              wad
+          <DropdownItems
+            class="absolute -left-1/3 right-1/4 top-full mt-4 flex justify-center">
+            <div
+              class="rounded-lg border-2 border-dark bg-paper/30 p-2 backdrop-blur-xl">
+              <div class="grid grid-cols-2 gap-2">
+                <a
+                  href="https://docs.zen-browser.app"
+                  class="w-64 rounded-lg border-2 border-dark p-2">
+                  Documentation
+                  <Description class="text-xs"
+                    >Read the documentation to learn more about Zen Browser.</Description
+                  >
+                </a>
+                <a
+                  href="/privacy-policy"
+                  class="w-64 rounded-lg border-2 border-dark p-2">
+                  Privacy Policy
+                  <Description class="text-xs"
+                    >Read our privacy policy to learn more about how we handle
+                    your data.</Description
+                  >
+                </a>
+                <a
+                  href="/about"
+                  class="w-64 rounded-lg border-2 border-dark p-2">
+                  About
+                  <Description class="text-xs"
+                    >Learn more about the Zen Browser project and the team
+                    behind it.</Description
+                  >
+                </a>
+                <a
+                  href="/release-notes"
+                  class="w-64 rounded-lg border-2 border-dark p-2">
+                  Release Notes
+                  <Description class="text-xs"
+                    >Stay up to date with the latest changes to Zen Browser</Description
+                  >
+                </a>
+              </div>
             </div>
           </DropdownItems>
         </Dropdown>
         <Dropdown class="group">
           <button class="flex items-center">
             <span>Useful Links</span>
-            <ChevronDown class="group-open:rotate-180 transform transition-transform duration-200" />
+            <ChevronDown
+              class="transform transition-transform duration-200 group-open:rotate-180"
+            />
           </button>
-          <DropdownItems>
-            <div class="absolute top-0">
-              wad
+          <DropdownItems
+            class="absolute left-0 right-0 top-full mt-4 flex justify-center">
+            <div
+              class="rounded-lg border-2 border-dark bg-paper/30 p-2 backdrop-blur-xl">
+              <div class="grid grid-cols-2 gap-2">
+                <a
+                  href="https://discord.gg/zen-browser"
+                  class="w-64 rounded-lg border-2 border-dark p-2">
+                  Discord
+                  <Description class="text-xs"
+                    >Join our Discord server to chat with the community and get
+                    support.</Description
+                  >
+                </a>
+                <a
+                  href="https://github.com/zen-browser"
+                  class="w-64 rounded-lg border-2 border-dark p-2">
+                  Source Code
+                  <Description class="text-xs"
+                    >View the source code on GitHub and contribute to the
+                    project.</Description
+                  >
+                </a>
+                <a
+                  href="https://patreon.com/zen_browser?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink"
+                  class="w-64 rounded-lg border-2 border-dark p-2">
+                  Patreon
+                  <Description class="text-xs"
+                    >Support us on Patreon and get exclusive rewards and keep
+                    the...</Description
+                  >
+                </a>
+                <a
+                  href="https://ko-fi.com/zen_browser?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink"
+                  class="w-64 rounded-lg border-2 border-dark p-2">
+                  Ko-fi
+                  <Description class="text-xs"
+                    >Ko-fi is a way to support us with a one-time donation and
+                    help us keep the...</Description
+                  >
+                </a>
+                <a
+                  href="/branding-assets"
+                  class="w-64 rounded-lg border-2 border-dark p-2 col-span-2">
+                  Branding
+                  <Description class="text-xs"
+                    >Download our branding assets to use in your projects.</Description
+                  >
+                </a>
+              </div>
             </div>
           </DropdownItems>
         </Dropdown>
@@ -46,6 +135,7 @@ import { ArrowRight, ChevronDown } from 'lucide-astro'
           Download
           <ArrowRight class="size-4" />
         </Button>
+      </ul>
     </MenuItems>
-  </Astronav> 
+  </Astronav>
 </nav>
